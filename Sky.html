@@ -1,0 +1,104 @@
+<!DOCTyPE HTML>
+<html lang='en'>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			html {
+				font-family: helvetica;
+			}
+			body {
+				margin:0;
+				position: relative;
+				background-color: lightblue;
+				transition: 0.2s;
+			}
+			#circle {
+				background: LightGoldenRodYellow;
+				border-radius: 50%;
+				width: 75px;
+				height: 75px;
+				color: black;
+				transition: 100ms;
+				text-align:center;
+				vertical-align: center;
+				font-size: 1.5em;
+				margin:auto;
+				transition: 0.2s;
+				margin-top: 20px;
+			}
+			#circle:hover {
+				background-color: Gold;
+			}
+			#colors {
+				position: relative;
+				/*background-color: lightblue;*/
+				margin: auto;
+				width: 1000px;
+				transition: 0.2s;
+			}
+			p {
+				z-index: 1;
+				position: relative;
+			}
+			#banner {
+				background: none;
+				color: white;
+				text-align: center;
+				font-size: 2.4em;
+				position: relative;
+				width: 1000px;
+				border: 5px solid white;
+				overflow: hidden;
+				padding: 5px;
+				transition: all 0.3s;
+			}
+			#banner:hover {
+				color: lightblue;
+			}
+			#banner::after {
+				background-color: white;
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				z-index: -1;
+				height: 0%;
+				width: 100%;
+				transition: all 0.3s;
+				transform: translateX(-50%) translateY(-50%) rotate(45deg);
+				opacity: 0;
+			}
+			
+			#banner:hover::after {
+				height: 260%;
+				opacity: 1;
+			}
+		</style>
+		<script>
+			function changeBackground() {
+				document.getElementsByTagName("body")[0].style = "background-color: LightCoral;";
+				//document.getElementById("colors").style = "background-color: LightCoral;";
+			}
+			
+			function resetBackground() {
+				document.getElementsByTagName("body")[0].style = "background-color: LightBlue;";
+				//document.getElementById("colors").style = "background-color: LightBlue;";
+			}
+			
+			/*
+				have 4 stages of the the day-night cycle on a clock and flip through them
+			*/
+		</script>
+	</head>
+	<body>
+		<div id="circle" onmouseover="changeBackground()" onmouseout="resetBackground()">
+		</div>
+		<div id="colors">
+			<p>
+				<button id="banner">
+					Banner
+				</button>
+			</p>
+		</div>
+	</body>
+</html>
