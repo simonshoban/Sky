@@ -6,13 +6,17 @@ body {
     margin:0;
     transition: 0.2s;
     height: 100%;
-    overflow: hidden;
+    position: relative;
+}
+#circle_container {
+    padding-top: 40px;
+    width: 85px;
+    margin: 0 auto;
 }
 #circle {
     border-radius: 50%;
     width: 85px;
     height: 85px;
-    margin: 40px auto;
     color: black;
     transition: 0.2s;
 }
